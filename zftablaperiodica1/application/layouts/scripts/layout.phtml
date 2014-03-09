@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <?php echo  $this->headTitle('Sistema de Tabla Periodico')?>
+        <?php echo $this->headStyle()?>
+        <?php  echo  $this->headLink()->appendStylesheet($this->baseUrl().'/css/style.css')?>
+        <?php echo $this->headScript()->setAllowArbitraryAttributes(true)->appendFile($this->baseUrl().'/js/javascript.js')?>
+     <style type="text/css">
+     #menu
+     {
+	width:1200px;
+	height:50px;
+	background-color: #33CCFF;
+	text-align:center;
+        border: 2px solid #444444;
+     }
+     </style>
+    </head>
+
+    <body onLoad=hola();>
+        <?php echo $this->render('header.phtml') ?>
+        <?php echo $this->render('menu.phtml') ?>
+        <center>  <div id="content"> <?php echo $this->layout()->content; ?> </div> </center>
+        <?php echo $this->render('footer.phtml')?>
+    </body>
+</html>

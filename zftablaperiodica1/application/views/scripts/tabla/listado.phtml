@@ -1,0 +1,26 @@
+<div id="view-content">
+	<?php //<p>View script for controller <b>Usuario</b> and script/action name <b>listado</b></p>?>
+</div>
+<form id="form1" name="form1" method="post" action="<?php echo $this->baseUrl?>/Contenido/buscarporid">
+  <table width="200" border="0" align="center">
+    <tr>
+      <td><input type="text" name="txtId" id="txtId" value="<?php echo $this->id ?>" /></td>
+      <td><input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" /></td>
+    </tr>
+  </table>
+</form>
+<table width="100%" border="1" class="tablavista" align="center" >
+  <tr bgcolor="#9933FF">
+    <td>Nº Tema</td>
+    <td>Contenido Tematico</td>
+ 
+  </tr>
+  <?php foreach ( $this->listaContenido as $value  ) { //Esto imprime a todos los datos?>
+  <tr>
+      <td><?php echo $value->getId()?></td>
+     <td><?php echo $value->getNombre()?></td>
+  
+     <?php } ?>
+</table>
+<?php  //var_dump($this->listaUser1=$this->id)$this->view->listaUser1=$this->_buscarPorId->buscarPorId($id); ;?>
+

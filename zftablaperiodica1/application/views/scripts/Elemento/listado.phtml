@@ -1,0 +1,38 @@
+<div id="view-content">
+	<?php //<p>View script for controller <b>Usuario</b> and script/action name <b>listado</b></p>?>
+</div>
+<form id="form1" name="form1" method="post" action="<?php echo $this->baseUrl?>/Elemento/buscarporid">
+  <table width="200" border="0" align="center">
+    <tr>
+      <td><input type="text" name="txtId" id="txtId" value="<?php echo $this->id ?>" /></td>
+      <td><input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" /></td>
+    </tr>
+  </table>
+</form>
+<table width="80%" border="1" class="tablavista" align="center" >
+  <tr bgcolor="#9933FF">
+    <td>N.A.</td>
+    <td>Nombre</td>
+    <td>Simbolo</td>
+    <td>Peso Atomico</td>
+    <td>Valencia</td>
+     <td>Tipo</td>
+    <td>Familia</td>
+    <td>Opcion</td>
+  </tr>
+  <?php foreach ( $this->listaElemento as $value  ) { //Esto imprime a todos los datos?>
+  <tr>
+      <td><?php echo $value->getId()?></td>
+     <td><?php echo $value->getNombre()?></td>
+     <td><?php echo $value->getSimbolo()?></td>
+     <td><?php echo $value->getPesoatomico()?></td>
+     <td><?php echo $value->getValencia()?></td>
+     <td><?php echo $value->getTipo()?></td>
+     <td><?php echo $value->getFamilia()?></td>
+     <td> <a href="<?php echo $this->baseUrl()?>/Elemento/eliminar?id=<?php echo $value->getId()?>">Eliminar</a>/
+       <a href="<?php echo $this->baseUrl()?>/Elemento/modificar?id=<?php echo $value->getId()?>">Modificar</a></td>
+  </tr>
+  <?php } ?>
+</table>
+<?php  //var_dump($this->listaUser1=$this->id)$this->view->listaUser1=$this->_buscarPorId->buscarPorId($id); ;?>
+

@@ -1,0 +1,33 @@
+<div id="view-content">
+	<?php //<p>View script for controller <b>Usuario</b> and script/action name <b>listado</b></p>?>
+</div>
+<form id="form1" name="form1" method="post" action="<?php echo $this->baseUrl?>/usuario/buscarporid">
+  <table width="200" border="4" align="center">
+    <tr>
+      <td><input type="text" name="txtId" id="txtId" value="<?php echo $this->id ?>" /></td>
+      <td><input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" /></td>
+    </tr>
+  </table>
+</form>
+<table width="80%" border="1" class="tablavista" align="center" >
+  <tr bgcolor="#9933FF">
+    <td>ID</td>
+    <td>NOMBRE</td>
+    <td>APELLIDO</td>
+    <td>ROL</td>
+    <td>CORREO</td>
+    <td>OPCION</td>
+  </tr>
+  <?php foreach ( $this->listaUser as $value  ) { //Esto imprime a todos los datos?>
+  <tr>
+     <td><?php echo $value->getId()?></td>
+     <td><?php echo $value->getNombre()?></td>
+     <td><?php echo $value->getApellido()?></td>
+     <td><?php echo $value->getRol()?></td>
+     <td><?php echo $value->getCorreo()?></td>
+     <td> <a href="<?php echo $this->baseUrl()?>/usuario/eliminar?id=<?php echo $value->getId()?>">Eliminar</a>/
+       <a href="<?php echo $this->baseUrl()?>/usuario/modificar?id=<?php echo $value->getId()?>">Modificar</a></td>
+  </tr>
+  <?php } ?>
+</table>
+<?php  //var_dump($this->listaUser1=$this->id)$this->view->listaUser1=$this->_buscarPorId->buscarPorId($id); ;?>
